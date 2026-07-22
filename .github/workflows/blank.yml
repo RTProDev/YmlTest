@@ -1,0 +1,29 @@
+stages:
+  - test
+  - build
+  - deploy
+
+run-test:
+  only:
+    - developer
+  stage: test
+  script:
+    - echo "run test!"
+
+run-build:
+  only:
+    - main
+  stage: build
+  script:
+    - echo "run build!"
+
+run-deploy:
+  only:
+    - main
+  stage: deploy
+  needs:
+    - run-build
+  before_script:
+    - ls
+  script:
+    - echo "run deploy!"
