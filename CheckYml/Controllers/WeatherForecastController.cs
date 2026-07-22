@@ -30,7 +30,7 @@ namespace CheckYml.Controllers
             .ToArray();
         }
 
-        [HttpGet(Name = "GetWeatherForecast2")]
+        [HttpGet(Name = "Get2")]
         public IEnumerable<WeatherForecast> Get2()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
